@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de Fancybox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+<body>
+<!-- Contenido de la página -->
+
+<h1>jquery fancy</h1>
+
+<!-- Imagen que se abrirá en un Fancybox -->
+<a href="../imagen/Like.png" data-fancybox="gallery" data-caption="Imagen">
+    <img src="../imagen/Like.png" alt="Imagen" width="300" height="200">
+</a>
+
+<!-- Botón para ver el video en Fancybox -->
+<button id="ver-video">Ver video</button>
+
+<!-- Botón para ver el mapa en Fancybox -->
+<button id="ver-mapa">Ver mapa</button>
+
+<!-- Script para activar Fancybox -->
+<script>
+    $(document).ready(function() {
+        // Configura Fancybox para imágenes
+        $("[data-fancybox]").fancybox({
+            animationEffect: "fade",
+            transitionEffect: "slide",
+            loop: true
+        });
+
+        // Al hacer clic en el botón "Ver video", abre el video
+        $("#ver-video").click(function() {
+            $.fancybox.open({
+                src: 'https://www.youtube.com/embed/-exA3Nxywzk?si=usk3_lEzEA5nMpqZ',
+                type: 'iframe',
+                opts: {
+                    iframe: {
+                        preload: false
+                    }
+                }
+            });
+        });
+
+        // Al hacer clic en el botón "Ver mapa", abre el mapa
+        $("#ver-mapa").click(function() {
+            $.fancybox.open({
+                src: 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13293.867220165144!2d-70.5621901!3d-33.593190650000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1693878001662!5m2!1ses-419!2scl' ,
+                type: 'iframe',
+                opts: {
+                    iframe: {
+                        preload: false
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
